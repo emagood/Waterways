@@ -12,17 +12,17 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 
-[node name="PostProcessing" type="ViewportContainer"]
+[node name="PostProcessing" type="SubViewportContainer"]
 material = SubResource( 2 )
-margin_right = 1024.0
-margin_bottom = 600.0
+offset_right = 1024.0
+offset_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2( 1024, 600 )
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="World" parent="Viewport" instance=ExtResource( 1 )]
+[node name="World" parent="SubViewport" instance=ExtResource( 1 )]
